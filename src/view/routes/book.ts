@@ -1,2 +1,14 @@
 export const ROOT = '/';
 export const LESSON1 = '/lesson1';
+export const LESSON2 = '/lesson2';
+export const LESSON3 = '/lesson3';
+export const LESSON4 = '/lesson4';
+export const LESSON6 = '/student';
+export const LESSON7 = '/people';
+export const LESSON7ID = '/people/id/:manIndex';
+export const LESSON7FILMS = '/films';
+export const LESSON7IDFILMS = '/films/id/:filmIndex';
+export const SECRET = '/lesson4/:value';
+export const KEYBOARD = '/Keyboard';
+export const ACCORDION = '/Accordion';
+export const STUDENTREGISTRATION = '/registration';

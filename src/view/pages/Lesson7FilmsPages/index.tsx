@@ -2,22 +2,25 @@
 import React, { FC } from 'react';
 
 // Components
-import { ErrorBoundary, ColumnNavigation, ColumnContent, ColumnInfo } from '../../components';
+import { ErrorBoundary, ColumnNavigation, ColumnContent, ColumnInfo, Lesson7FilmsComponents } from '../../components';
 
 //Element
 import { CurrentPageName, NavigateBtn } from '../../elements';
 
-// Styles
-import * as S from './styles';
+//Styles
+import * as S from '../Main/styles';
 
-// Tools
-import { ACCORDION, KEYBOARD, LESSON1, LESSON2, LESSON3, LESSON4, LESSON6, LESSON7, STUDENTREGISTRATION } from '../../routes/book';
+//Books
+import { ROOT, LESSON1, KEYBOARD, LESSON2, LESSON3, ACCORDION, STUDENTREGISTRATION, LESSON6, LESSON4 } from '../../routes/book';
 
-const Main: FC = () => {
+const Lesson7PersonPages: FC = () => {
     return (
         <S.Inner>
             <ColumnNavigation>
-                <CurrentPageName pageName = 'Main'/>
+                <NavigateBtn
+                    lessonName = 'Main'
+                    rootBookName = { ROOT }
+                />
                 <NavigateBtn
                     lessonName = 'Lesson 1'
                     rootBookName = { LESSON1 }
@@ -42,10 +45,7 @@ const Main: FC = () => {
                     lessonName = 'Lesson 6:Student Profile Redux'
                     rootBookName = { LESSON6 }
                 />
-                <NavigateBtn
-                    lessonName = 'Lesson 7'
-                    rootBookName = { LESSON7 }
-                />
+                <CurrentPageName pageName = 'Lesson 7' />
                 <NavigateBtn
                     lessonName = 'Keyboard'
                     rootBookName = { KEYBOARD }
@@ -56,15 +56,16 @@ const Main: FC = () => {
                 />
             </ColumnNavigation>
             <ColumnContent>
-                <S.Title>React & Redux course</S.Title>
-                <img
-                    src = 'https://cdn.pellerex.com/public/ecosystem/web/content/identity/react-identity-check/react-redux.png'
-                    style = {{ width: '20%', margin: '30px auto 0', display: 'block' }}
-                />
+                <S.Title>Подробная информация о фильме: </S.Title>
+                <Lesson7FilmsComponents />
             </ColumnContent>
             <ColumnInfo>
-                <S.Img src = { 'https://www.meme-arsenal.com/memes/58a36f28ab98836d7b9a39804fbd4d00.jpg' } />
-                <S.UserName>Dmitry Ponomarenko</S.UserName>
+                <h4>Домашнее задание №7</h4>
+                <p>
+                    Компонент People будет выводить имена всех персонажей, а компонент Person будет
+                    выводить более детальную информацию про одного персонажа.
+                    В качестве API ресурса используйте даный сервис: https://swapi.co/documentation#people
+                </p>
             </ColumnInfo>
         </S.Inner>
     );
@@ -72,6 +73,6 @@ const Main: FC = () => {
 
 export default () => (
     <ErrorBoundary>
-        <Main />
+        <Lesson7PersonPages />
     </ErrorBoundary>
 );
